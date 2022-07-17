@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Mentionable",""]],"struct":[["ApplicationCommandEmbed","Conteneur d’application command"],["DelayedResponse","Delayed interaction response"]]});

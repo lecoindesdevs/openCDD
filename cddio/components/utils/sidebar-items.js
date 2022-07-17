@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["user_fullname",""]],"mod":[["data","Module de gestion des données des composants."],["task","Task runner for the bot. "],["time_parser","Small utility to parse time strings."]]});

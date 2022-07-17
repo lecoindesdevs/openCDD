@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["archive",""]],"struct":[["CategoryTicket","Catégorie de tickets"],["DataTickets","Données persistantes du composant"],["Tickets","Le composant de gestion des tickets"]]});

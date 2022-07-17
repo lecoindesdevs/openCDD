@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Config","Configuration de l’application"]]});

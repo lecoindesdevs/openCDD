@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["cddio_core"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.62.0/core/iter/traits/iterator/trait.Iterator.html\" title=\"trait core::iter::traits::iterator::Iterator\">Iterator</a> for <a class=\"struct\" href=\"cddio_core/declarative/struct.IterFlatNode.html\" title=\"struct cddio_core::declarative::IterFlatNode\">IterFlatNode</a>","synthetic":false,"types":["cddio_core::declarative::IterFlatNode"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["DALLE_MINI_MAX_COUNT",""]],"struct":[["DALLE_MINI_COUNTER",""],["DalleMini","The dalle mini component."],["DalleRequest","Dalle mini request API structure"],["DalleResponse","Dalle mini response API structure"]]});

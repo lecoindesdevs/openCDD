@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["cddio_core"] = [{"text":"impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.62.0/core/marker/trait.Copy.html\" title=\"trait core::marker::Copy\">Copy</a> for <a class=\"enum\" href=\"cddio_core/embed/enum.Mentionable.html\" title=\"enum cddio_core::embed::Mentionable\">Mentionable</a>","synthetic":false,"types":["cddio_core::embed::Mentionable"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

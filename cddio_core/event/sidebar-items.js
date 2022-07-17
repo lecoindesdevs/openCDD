@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["ComponentEventDispatcher","The component event dispatcher."]],"trait":[["ComponentEvent","The component event trait."],["RawEventHandler","This core trait for handling raw events"]]});

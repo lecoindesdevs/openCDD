@@ -1,0 +1,3 @@
+(function() {var implementors = {};
+implementors["cddio_core"] = [{"text":"impl <a class=\"trait\" href=\"cddio_core/event/trait.RawEventHandler.html\" title=\"trait cddio_core::event::RawEventHandler\">RawEventHandler</a> for <a class=\"struct\" href=\"cddio_core/event/struct.ComponentEventDispatcher.html\" title=\"struct cddio_core::event::ComponentEventDispatcher\">ComponentEventDispatcher</a>","synthetic":false,"types":["cddio_core::event::ComponentEventDispatcher"]}];
+if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
