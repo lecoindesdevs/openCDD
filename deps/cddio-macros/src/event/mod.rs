@@ -1,3 +1,4 @@
+pub mod interaction;
 use quote::{quote, ToTokens};
 
 use crate::util;

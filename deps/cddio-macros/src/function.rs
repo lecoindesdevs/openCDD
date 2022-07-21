@@ -5,8 +5,7 @@ use quote::{quote, ToTokens};
 use proc_macro2 as pm2;
 use super::util::*;
 use super::command::Command;
-use super::event::Event;
-use super::message_component::Interaction;
+use super::event::{Event, interaction::{MessageComponent, ModalSubmit}};
 
 pub trait Function : ToTokens + std::fmt::Debug {
     fn name(&self) -> pm2::TokenStream;
@@ -104,7 +103,8 @@ impl FunctionType {
         to_event!(impl_fn, 
             ("command", Command, Command),
             ("event", Event, Event),
-            ("message_component", Interaction, Event)
+            ("message_component", MessageComponent, Event),
+            ("modal_submit", ModalSubmit, Event)
         )
     }
     pub fn new_rc(impl_fn: syn::ImplItemMethod) -> syn::Result<RefFunction> {
