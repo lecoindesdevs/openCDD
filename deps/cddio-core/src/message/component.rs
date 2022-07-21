@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use serenity::{
     model::{
         application::component::{
@@ -5,7 +7,9 @@ use serenity::{
             ComponentType as SerenityComponentType,
             SelectMenuOption as SerenitySelectMenuOption,
             SelectMenu as SerenitySelectMenu,
-        }
+            ActionRowComponent
+        },
+        application::interaction::modal::ModalSubmitInteractionData
     }, 
     builder::{CreateInputText, CreateSelectMenu, CreateButton, CreateSelectMenuOption, CreateActionRow, CreateInteractionResponseData, CreateInteractionResponse}
 };
@@ -313,4 +317,26 @@ impl<'a, 'b> SetBuilder<'b, CreateInteractionResponseData<'a>> for Modal {
         });
         builder
     }
+}
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+pub enum Values<'a> {
+    InputText(&'a str),
+    SelectMenu(Vec<&'a str>),
+}
+pub fn modal_get_values<'a>(data: &'a ModalSubmitInteractionData) -> HashMap<&'a str, Values<'a>> {
+    let mut values = HashMap::new();
+    for component in data.components.iter().flat_map(|v| v.components.iter()) {
+        match component {
+            ActionRowComponent::InputText(v) => {
+                values.insert(v.custom_id.as_str(), Values::InputText(v.value.as_str()));
+            }
+            ActionRowComponent::SelectMenu(v) => {
+                if let Some(custom_id) = &v.custom_id {
+                    values.insert(custom_id.as_str(), Values::SelectMenu(v.values.iter().map(|v| v.as_str()).collect()));
+                }
+            }
+            _ => {}
+        }
+    }
+    values
 }
