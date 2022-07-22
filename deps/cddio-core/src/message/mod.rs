@@ -1,3 +1,5 @@
+pub mod component;
+
 use serenity::builder::{CreateEmbed, CreateInteractionResponse, EditInteractionResponse, CreateMessage};
 use serenity::utils::Colour;
 pub use serenity::builder::CreateEmbed as Embed;

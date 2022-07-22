@@ -181,14 +181,17 @@ async fn on_guild_ban(ctx: &Context, user: &User, guild_id: &GuildId)
 
 ### `#[message_component()]`
 
-Déclare un événement Discord de type *message component*.
+Intercepte les *message component* en fonction du custom_id renseigné.
 
 |argument|optionnel|description|
 |:-|:-:|:-|
-|*custom_id*| |custom_id intégré au message component|
+|*custom_id*| |custom_id intégré à l'intéraction|
 
+Note : La fonction doit obligatoirement prendre en parametre le contexte puis le message component.
 
 ```rust
+use serenity::model::application::interaction::message_component::MessageComponentInteraction;
+
 #[message_component(custom_id="button_ticket_close")]
 async fn on_button_ticket_close(&self, ctx: &Context, msg: &MessageComponentInteraction) 
 {}
@@ -197,7 +200,6 @@ async fn on_button_ticket_close(&self, ctx: &Context, msg: &MessageComponentInte
 Cette attribut est un helper en plus de l'attribut [event](#event). L'équivalent de l'exemple au dessus en utilisant l'attribut event :
 
 ```rust
-
 use serenity::model::{
     event::{
         Event::InteractionCreate,
@@ -209,12 +211,29 @@ use serenity::model::{
 async fn on_button_ticket_close(&self, ctx: &Context, message_interaction: &MessageComponentInteraction) 
 {}
 ```
+
+### `#[modal_submit()]`
+
+Intercepte les modales Discord en fonction du *custom_id* renseigné.
+
+|argument|optionnel|description|
+|:-|:-:|:-|
+|*custom_id*| |custom_id intégré à l'intéraction|
+
+Note : La fonction doit obligatoirement prendre en parametre le contexte puis le modal submit.
+
+```rust
+use serenity::model::application::interaction::modal::ModalSubmitInteraction;
+
+#[message_component(custom_id="modal_ticket")]
+async fn on_modal_ticket(&self, ctx: &Context, msg: &ModalSubmitInteraction) 
+{}
+```
  */
 
 mod function;
 mod command;
 mod event;
-mod message_component;
 
 mod util;
 mod log;
